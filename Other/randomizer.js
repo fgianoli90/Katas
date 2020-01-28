@@ -1,6 +1,7 @@
 let roster=["Joseph","Victor","Alexis","Maylen","Marissa","Isaac","David","Gustavo","Igor","Jorge","Natalicia","Melvin","Chaba","Nathan","Michael","Francesca"]
 //decide how many per group
 const numPerGroup = 2
+function getTeams(roster,numPerGroup){
 //Based on number per group and total headcount, find number of groups to be made
 let numOfGroups = 0
 if (roster.length%numPerGroup==0){
@@ -29,7 +30,7 @@ teams.push(newTeam)
 //Can console to see if any remaining people not in a group
 //console.log(roster)
 //If none remaining declare teams
-if (roster.length === 0){ console.log(teams)}
+if (roster.length === 0){ return teams}
 //if remaining people count is less than or equal to number of groups
 //then assign each person remaining to each group until none left
 else if (roster.length <= numOfGroups){
@@ -37,11 +38,12 @@ else if (roster.length <= numOfGroups){
   teams[i].push(roster[i])
   }
   //declare teams once remaining headcount assigned
-  console.log(teams)
+  return teams
 } 
 //if remaining headcount is larger then number of groups
 //then form new group with remaining people on roster
 else if (roster.length > numOfGroups){
   teams.push(roster)
-  console.log(teams) 
+  return teams 
+}
 }
