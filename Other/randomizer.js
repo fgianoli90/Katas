@@ -1,6 +1,8 @@
-let roster=["Joseph","Victor","Alexis","Maylen","Marissa","Isaac","David","Gustavo","Igor","Jorge","Natalicia","Melvin","Chaba","Nathan","Michael","Francesca"]
+
+let roster=document.myform.outputtext.value//["Joseph","Victor","Alexis","Maylen","Marissa","Isaac","David","Gustavo","Igor","Jorge","Natalicia","Melvin","Chaba","Nathan","Michael","Francesca"]
 //decide how many per group
-const numPerGroup = 2
+const numPerGroup = document.headcount.value
+
 function getTeams(roster,numPerGroup){
 //Based on number per group and total headcount, find number of groups to be made
 let numOfGroups = 0
@@ -46,4 +48,11 @@ else if (roster.length > numOfGroups){
   teams.push(roster)
   return teams 
 }
+}
+function addtext() {
+	var newtext = document.myform.inputtext.value;
+	if (document.myform.placement[1].checked) {
+		document.myform.outputtext.value = "";
+		}
+	  document.myform.outputtext.value += newtext+',';
 }
